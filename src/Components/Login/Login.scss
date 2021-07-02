@@ -1,0 +1,58 @@
+body{
+    margin-top: 80px;
+    margin-bottom: 80px;
+    background-color: #8ed1cd;  
+    .form{
+        padding: 16px;
+        background-color: white;
+        border-radius: 8px;
+        .login-page{
+            height: 380px;
+            .admin{
+                margin-bottom: 20px;
+                font-size: 24px;
+                font-weight: 600;
+                display: flex;
+                justify-content: center;
+            }
+            .username,.password{
+                margin-bottom: 20px;
+                width: 100%;
+                border: none;
+                padding: 16px 0px 12px 0px;
+                border-bottom: 1px solid black;
+                outline: none;
+                font-size: 16px;
+            }
+            .forgot{
+                text-align: right;
+                font-size: 16px;
+            }
+            .submit-button{
+                margin-top: 40px;
+                background-color:#5a6175;
+                width: 400px;
+                height: 58px;
+                border: unset;
+                font-weight: 600;
+                outline: none;
+                font-size: 18px;
+                font-family: sans-serif;
+                cursor: pointer;
+                border-radius: 4px;
+                &:hover{
+                    background-color: #37a0ff;
+                    color: #4e1414;
+                }
+            }
+        }
+        .invalid{
+            color: red;
+            font-size: 20px;
+        }
+        .success{
+            color: green;
+            font-size: 20px;
+        }
+    }
+}

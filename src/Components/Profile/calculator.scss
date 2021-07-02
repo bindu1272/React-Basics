@@ -1,0 +1,22 @@
+.calculator{
+    background-color: #0e0e0e;
+    color: #ffffff;
+    border : 8px solid #ffffff;
+    padding-left: 40px;
+    #textarea{
+        font-weight: 600;
+        font-size: 24px;
+    }
+    .main{
+        display: flex;
+        .operators{
+            background-color: #ffa500;
+        }
+    }
+    button{
+        width: 80px;
+        height : 50px;
+        font-weight: 600;
+        font-size: 24px;
+    }
+}

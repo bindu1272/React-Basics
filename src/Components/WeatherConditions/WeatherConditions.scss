@@ -1,0 +1,27 @@
+.main-template{
+    background-color: gray;
+    margin-top: 32px;
+    .inputData{
+        display : flex;
+        padding-top: 32px;
+        .textfeild{
+            margin: 0px 16px 20px 16px;
+            background-color: #ffffff;
+            border: 0px solid lightgrey;
+            border-radius: 6px;
+            height: 40px;
+        }
+        .weather-button{
+            background-color: green;
+            color: #ffffff;
+            height: 48px;
+            width: 100px;
+            font-weight: 600;
+            border: 2px solid #37a0ff;
+            border-radius: 4px;
+            outline: none;
+            margin-right: 8px;
+            cursor: pointer
+        }
+    }
+}
