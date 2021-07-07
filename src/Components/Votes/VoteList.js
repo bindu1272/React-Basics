@@ -46,30 +46,30 @@ class VoteList extends Component{
         return(
             <div>
                 <h1>Vote Your Languages....</h1>
-                        {
-                            Object.keys(languages).map((key,index)=> {
-                                return(
-                                    <div className="items">
-                                        <div key={index}>{languages[key]}</div>
-                                        <div>{key}</div>
-                                        <div><button className ="click-button" onClick={()=>this.count(key)}>ClickHere</button></div>
-                                    </div>
-                                )
-                            })
-                        }
-                        <div>
-                            <button className="submit-button" onClick={this.submitMethod}>Submit</button>
+                    {
+                        Object.keys(languages).map((languageName,index)=> {
+                            return(
+                                <div className="items">
+                                    <div key={index}>{languages[languageName]}</div>
+                                    <div>{languageName}</div>
+                                    <div><button className ="click-button" onClick={()=>this.count(languageName)}>ClickHere</button></div>
+                                </div>
+                            )
+                        })
+                    }
+                    <div>
+                        <button className="submit-button" onClick={this.submitMethod}>Submit</button>
+                    </div>
+                    {
+                        this.state.highestVotes.length!=0 && 
+                        <div className="highest">
+                            {
+                                this.state.highestVotes.map(x=>{
+                                    return <div>{x}</div>
+                                })
+                            } 
+                                has highest votes 
                         </div>
-                        {
-                            this.state.highestVotes.length!=0 && 
-                            <div className="highest">
-                                {
-                                    this.state.highestVotes.map(x=>{
-                                        return <div>{x}</div>
-                                    })
-                                } 
-                                 has highest votes 
-                            </div>
                         }
             </div>
         )

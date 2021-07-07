@@ -25,10 +25,10 @@ class MainList extends Component{
         })
     }
     popMethod=(index)=>{
-        let names= [...this.state.names];
-        names.splice(index,1);
+        let listNames= [...this.state.names];
+        listNames.splice(index,1);
         this.setState({
-            names
+            names : listNames
         })
     }
     render(){

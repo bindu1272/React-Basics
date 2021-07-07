@@ -10,8 +10,7 @@ class ProfileApi extends Component{
         }
     }
     componentDidMount(){
-        axios.get("https://api.github.com/users/supreetsingh247")
-        .then(res=>{
+        axios.get("https://api.github.com/users/supreetsingh247").then(res=>{
             this.setState({
                 profile : res.data
             })
@@ -24,7 +23,7 @@ class ProfileApi extends Component{
         })
     }
     componentDidUpdate(){
-        if(this.state.number==1){
+        if(this.state.number===1){
         this.setState({
             number : this.state.number + 1
         },()=>
@@ -39,6 +38,7 @@ class ProfileApi extends Component{
                         <img className = "userimage" src = {this.state.profile["avatar_url"]}/>
                         <div className = "username">{this.state.profile["login"]}</div>
                         <div className = "userbio">{this.state.profile.bio}</div>
+                        <div>{this.state.profile.location}</div>
                     </Fragment>
                 }
             </div>

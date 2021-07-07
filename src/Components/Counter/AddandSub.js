@@ -10,7 +10,7 @@ class AddandSub extends Component{
     addition=()=>{
         let count = this.state.result;
         this.setState({
-            result : this.state.result + 1
+            result : count + 1
         })
     }
     subtraction=()=>{

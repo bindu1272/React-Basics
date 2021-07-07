@@ -10,8 +10,7 @@ class Counter extends Component{
         let count = this.state.count + 1;
         this.setState({
             count : count
-        })
-        this.a(count);
+        },()=>console.log(this.state.count))
     }
     // incrementFive=()=>{
     //     this.increment();

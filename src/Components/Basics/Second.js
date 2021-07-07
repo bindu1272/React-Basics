@@ -7,7 +7,7 @@ class Second extends Component {
                 <div>name : {name}</div>
                 <div>age : {age}</div>
                 <div>
-                    <input type="text" name="name" onChange={this.props.handleInput}/>
+                    <input type="text" name="years" onChange={this.handleInput}/>
                 </div>
             </div>
         )

@@ -4,7 +4,7 @@ import React, { Component } from 'react';
     // constructor(props){
     //     super(props)
     //     this.state = {
-        const names = ["bindu","jyothi","padma"]
+        let names = ["bindu","jyothi","padma"]
         // names : ["bindu","jyothi","padma"]
         // }
     // }
@@ -14,7 +14,12 @@ import React, { Component } from 'react';
         return(
             <div>
             {
-                names.map(names => <h1>{names}</h1>)
+                names.map((names) =>{
+                    return(
+                    <h1>{names}</h1>
+                    )
+                })
+
             }
             </div>
         )

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component } from 'react';
 import Second from './Second';
 class Form extends Component {
     constructor(){
@@ -10,7 +10,6 @@ class Form extends Component {
                 {name:"bindu",age:"20"}
             ]
         }
-        // this.onFormSubmit = this.onFormSubmit.bind(this);
     }
     onFormSubmit = (event)=>{
         event.preventDefault();
@@ -26,7 +25,7 @@ class Form extends Component {
         })
     }
     render() {
-        const { name, age,subjects } = this.state;
+        const {name, age,subjects} = this.state;
         return (
             <div className="form">
                 <div className="heading">Form Elements</div>
@@ -41,11 +40,11 @@ class Form extends Component {
                 <input type="submit" onClick={this.onFormSubmit}/>
                 {
                     this.state.count === 1 &&
-                        <Second firstName={name} lastName={age} handleInput = {this.handleInput}/>
+                        <Second name={name} age={age} handleInput = {this.handleInput}/>
                 }
                 <ul>
                     {
-                        subjects?.map((value,i)=>{
+                        subjects &&  subjects.map((value,i)=>{
                             return (
                                 <li key={i}>{value}</li>
                             )
@@ -54,7 +53,7 @@ class Form extends Component {
                 </ul>
                 <ul>
                     {
-                        this.state.person?.map((value, i) => {
+                        this.state.person&& this.state.person.map((value, i) => {
                             return (
                             <li key={i}>{value.name} {value.age}</li>
                             )
@@ -65,5 +64,4 @@ class Form extends Component {
         )
     }
 }
-
 export default Form;
