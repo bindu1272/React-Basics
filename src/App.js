@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import FirstPart from './Components/ValidatingData/FirstPart.js';
+// import Basics from './Components/MaterialUI/Basics.js';
 // import VoteList  from './Components/Votes/VoteList.js';
 // import AddandSub  from './Components/Counter/AddandSub.js';
 // import Form from './Components/Basics/Form.js';
@@ -102,6 +103,7 @@ class App extends Component{
 			// <ProfileApi/>
 			// <Calculator/>
 			// <VoteList/>
+			// <Basics/>
 		)
 	}
 

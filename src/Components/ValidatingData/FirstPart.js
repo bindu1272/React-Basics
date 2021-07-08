@@ -1,13 +1,10 @@
 import React, { Component, Fragment } from 'react'
 import './FirstPart.css'
+import Helper from './Helper.js'
+import GetVariations from './GetVariations.js'
 import {
-  TARGET_USERS,
   NAMES,
   VARIATIONS,
-  GRADES,
-  BOARDS,
-  ACADEMIC_YEARS,
-  APP_VERSIONS,
   DIMENSIONS,
   SPLIT_VARIATIONS,
   UID,
@@ -57,64 +54,6 @@ class FirstPart extends Component {
       bannerUrl: bannerUrl
     })
   }
-  template = () => {
-    return (
-      <Fragment>
-        <div className='a'>
-          <label>Grades</label>
-          <select
-            onChange={this.changeHandler}
-            value={this.state.grades}
-            name='grades'
-          >
-            <option>Select Grades</option>
-            {GRADES.map((grade, i) => {
-              return <option value={grade}>{grade}</option>
-            })}
-          </select>
-        </div>
-        <div>
-          <label>Boards</label>
-          <select
-            onChange={this.changeHandler}
-            value={this.state.boards}
-            name='boards'
-          >
-            <option>Select Boards</option>
-            {BOARDS.map((board, i) => {
-              return <option value={board}>{board}</option>
-            })}
-          </select>
-        </div>
-        <div>
-          <label>Academic Years</label>
-          <select
-            onChange={this.changeHandler}
-            value={this.state.academic_years}
-            name='academic_years'
-          >
-            <option>Select Academic Years</option>
-            {ACADEMIC_YEARS.map((year, i) => {
-              return <option value={year}>{year}</option>
-            })}
-          </select>
-        </div>
-        <div>
-          <label>App Versions</label>
-          <select
-            onChange={this.changeHandler}
-            value={this.state.app_versions}
-            name='app_versions'
-          >
-            <option>Select App Versions</option>
-            {APP_VERSIONS.map((version, i) => {
-              return <option value={version}>{version}</option>
-            })}
-          </select>
-        </div>
-      </Fragment>
-    )
-  }
   variationCount = () => {
     return (
       <div>
@@ -163,7 +102,7 @@ class FirstPart extends Component {
       return (
         <Fragment>
           <label>
-            Ending with {SPLIT_VARIATIONS[this.state.splitVariation]} 
+            Ending with {SPLIT_VARIATIONS[this.state.splitVariation]}
           </label>
           {SPLIT_VARIATIONS[this.state.splitVariation] === NAMES.UID
             ? UID.map((variationId, i) => {
@@ -397,6 +336,7 @@ class FirstPart extends Component {
     console.log(params)
   }
   render () {
+    const { grades, boards, academic_years, app_versions } = this.state
     return (
       <div>
         <div>
@@ -410,30 +350,23 @@ class FirstPart extends Component {
         </div>
         <div>
           <label>Target Users </label>
-          {TARGET_USERS.map((user, i) => {
-            return (
-              <Fragment>
-                <input
-                  type='radio'
-                  id={user}
-                  name='targetUser'
-                  value={i}
-                  checked={this.state.targetUser === i ? true : false}
-                  onChange={this.changeHandler}
-                />
-                <label htmlFor={user}>{user}</label>
-              </Fragment>
-            )
-          })}
+          {Helper.getTargetUsers(this.state.targetUser, this.changeHandler)}
         </div>
-        {this.state.targetUser > 0 && this.template()}
+        {this.state.targetUser > 0 &&
+          Helper.template(
+            grades,
+            boards,
+            academic_years,
+            app_versions,
+            this.changeHandler
+          )}
         {this.variationCount()}
         {this.state.variationCount > 0 && this.userIdVariation()}
-        {VARIATIONS.map((variation, i) => {
-          if (variation <= this.state.variationCount) {
-            return <Fragment>{this.template2()}</Fragment>
-          }
-        })}
+        {/* {Helper.getVariations(this.state.variationCount,this.template2)} */}
+        <GetVariations
+          variationCount={this.state.variationCount}
+          template2={this.template2}
+        />
         <div>
           <button onClick={this.storingData}>Save</button>
         </div>
