@@ -1,5 +1,7 @@
 import React,{Component} from 'react';
-import FirstPart from './Components/ValidatingData/FirstPart.js';
+import Table from './Components/TableInformation/Table.js';
+import CheckBox  from './Components/TableInformation/CheckBox.js';
+// import FirstPart from './Components/ValidatingData/FirstPart.js';
 // import Basics from './Components/MaterialUI/Basics.js';
 // import VoteList  from './Components/Votes/VoteList.js';
 // import AddandSub  from './Components/Counter/AddandSub.js';
@@ -98,12 +100,14 @@ class App extends Component{
 	render(){
 		return(
 			// <PictureZoominZoomOut/>
-			<FirstPart/>
+			// <FirstPart/>
 			// <Form/>
 			// <ProfileApi/>
 			// <Calculator/>
 			// <VoteList/>
 			// <Basics/>
+			<Table/>
+			// <CheckBox/>
 		)
 	}
 
