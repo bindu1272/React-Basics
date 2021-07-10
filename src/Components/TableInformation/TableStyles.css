@@ -20,8 +20,11 @@ table{
 
 }
 table td,th{
-    border: 2px solid;
+    border: 1px solid #dddddd;
     text-align: center;
+}
+tr:nth-child(even) {
+    background-color: #dddddd;
 }
 .no-data{
     text-align: center;
